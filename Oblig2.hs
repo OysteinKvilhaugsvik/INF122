@@ -3,6 +3,7 @@ import Data.Maybe (fromMaybe)
 import Data.List (findIndex, elemIndex)
 import Text.ParserCombinators.Parsec (newline)
 
+
 towers :: Tower -> Tower -> Tower -> IO ()
 towers tower t2 t3 = mapM_ (\m -> putStrLn $ towerline (tower !! m) m ++ towerline (t2 !! m) m ++ towerline (t3 !! m) m) [0..height]
     where height       = maximum [last tower, last t2, last t3]
